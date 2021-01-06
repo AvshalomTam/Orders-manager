@@ -1,19 +1,5 @@
 const User  = require('../models/user');
-// username: {
-//     type: String,
-//     required: true
-// },
-// password: {
-//     type: String,
-//     required: true
-// },
-// tel: {
-//     type: String
-// },
-// isadmin: {
-//     type: Boolean,
-//     required: true
-// }
+
 const createUser = (username='', password='' ,tel='', isadmin=false) => {
     const user = new User({
         username,

@@ -23,6 +23,3 @@ orderForm.addEventListener('submit', (e) => {
         })
     });
 });
-
-
-

@@ -17,4 +17,4 @@ logoutButton.addEventListener('click', (e) => {
             msg.textContent = data.msg;
         })
     });
-})
+});

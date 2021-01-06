@@ -23,9 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(userRouter);
 app.use(orderRouter);
-// const { checkValidMsg, orderMessage } = require('./utils/fillArray');
-const User = require('./models/user');
-// const Order = require('./models/order');
+
+// Routs
 app.get('/', function(req, res) {
     res.render('index');  
 });
@@ -46,27 +45,6 @@ app.get('/login', (req, res) => {
     res.render('login');
 });
 
-app.get('/stam', async (req, res) => {
-    try {
-        const user = await User.findOne({ username: 'Avshalom' });
-
-        if (!user) {
-            return res.status(404).send()
-        }
-        res.send(user._id)
-
-        const user2 = await User.findOne({ _id: '5ff441364650cf226ccd5dba' });
-
-        if (!user2) {
-            console.log('didnt worked')
-        } else {
-            console.log(user2.username)
-        }
-    } catch (e) {
-        console.log('Problem with getting data: ' + e);
-    }
-})
-
 app.get('*', (req, res) => {
     res.render('404page', {
         title: '404 page',
@@ -76,4 +54,3 @@ app.get('*', (req, res) => {
 })
 
 module.exports = app
-

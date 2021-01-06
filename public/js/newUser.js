@@ -23,17 +23,4 @@ userForm.addEventListener('submit', (e) => {
             welcome.textContent = data.msg;
         })
     });
-})
-
-    // fetch('/userrouter').then((response) => {
-    //     response.json().then((data) => {
-    //         console.log(data.msg);
-    //     })
-    // });
-
-    // fetch('/userrouter2').then((response) => {
-    //     response.json().then((data) => {
-    //         console.log(data.msg);
-    //     })
-    // });
-
+});

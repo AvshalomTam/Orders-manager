@@ -1,7 +1,6 @@
 const userForm = document.querySelector('form');
 const username = document.querySelector('#name');
 const password = document.querySelector('#password');
-
 const message = document.querySelector('#msg');
 
 userForm.addEventListener('submit', (e) => {
@@ -22,17 +21,4 @@ userForm.addEventListener('submit', (e) => {
             message.textContent = data.msg;
         })
     });
-})
-
-    // fetch('/userrouter').then((response) => {
-    //     response.json().then((data) => {
-    //         console.log(data.msg);
-    //     })
-    // });
-
-    // fetch('/userrouter2').then((response) => {
-    //     response.json().then((data) => {
-    //         console.log(data.msg);
-    //     })
-    // });
-
+});

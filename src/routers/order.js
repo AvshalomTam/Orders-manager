@@ -32,7 +32,6 @@ router.post('/saveorder', async (req, res) => {
 router.get('/orders', async (req, res) => {
     try {
         const id_current = await getIdOfCurrUser();
-        // const username = await getUserNameById(id_current);
         // check if someone logged in 
         if (id_current === '0') {
             res.send({orderOne: 'You should logIn first!'});
@@ -40,12 +39,10 @@ router.get('/orders', async (req, res) => {
             var orders = []
             if (id_current === '5ff441364650cf226ccd5dba') {
                 orders = await Order.find({});
-                // console.log(orders);
             } else {
                 // get all orders of this user
                 orders = await getUserOrdersById(id_current);
             }
-            
             // check if user have orders
             if (orders.length === 0) {
                 const msg = {

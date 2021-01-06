@@ -1,5 +1,4 @@
 const ordersButton = document.querySelector('#view-orders');
-
 const orderOne = document.querySelector('#order-1');
 const orderTwo = document.querySelector('#order-2');
 const orderThree = document.querySelector('#order-3');

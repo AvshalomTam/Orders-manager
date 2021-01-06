@@ -24,5 +24,3 @@ const {createUser} = require('./createUser');
 // createOrder(157, 'rotem', '23.12.2020', '011111111');
 // createOrder(157, 'miri', '23.12.2020', '0808080880808');
 // createOrder(157, 'dalia', '23.12.2020', '0560211111');
-
-
