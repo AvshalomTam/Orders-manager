@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    {{>background}}
+</head>
+
+<body>
+        {{>header}}
+        <div class=details>
+            <div class=pic>
+                <h2>New User</h2>
+                <span>
+                    <a href="/newuser">
+                        <img class="portrait" src="/img/new_user.jpeg" height="150"/>
+                    </a>
+                </span>
+            </div>
+
+            <div class=pic>
+                <h2>Login:</h2>
+                <span>
+                    <a href="/login">
+                        <img class="portrait" src="/img/login.jpeg" height="150" />
+                    </a>
+                </span>
+            </div>
+
+            <div class=pic>
+                <h2>Logout:</h2>
+                <span>
+                    <a href="/">
+                        <img id="logout-button" class="portrait" src="/img/logout.jpeg" height="150" />
+                    </a>
+                </span>
+                <div class=py>
+                    <div class=mana_name>
+                        <p id="msg"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    {{>background}}
+</head>
+
+<body>
+    <div class=a>
+        {{>header}}
+
+        <div class=e>
+        <form>
+            <header>
+                <div class=en>
+                    <p>Mana Name:</p>
+                </div>
+                    <select name="manaopt" id="manaopt">
+                        <option value="Pizza">Pizza</option>
+                        <option value="Lazania">Lazania</option>
+                        <option value="Pasta">Pasta</option>
+                    </select>
+                <div class=en>
+                    <p>Description:</p>
+                </div>
+                <input id="description" placeholder="Enter Description" autocomplete="off">
+                <button id="make-order">Make Order</button>
+            </header>
+        </form>
+        <div class=py>
+            <div class=mana_name>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </div>
+     
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/js/makeOrder.js"></script>
+</body>
+</html>

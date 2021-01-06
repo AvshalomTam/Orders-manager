@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+    {{>background}}
+</head>
+
+<body>
+    <div class=a>
+        {{>header}}
+
+        <div class=e>
+        <form>
+            <header>
+                <div class=en>
+                    <p>Name:</p>
+                </div>
+                <input id="name" placeholder="Enter Name" autocomplete="off">
+                <div class=en>
+                    <p>Password:</p>
+                </div>
+                <input id="password" placeholder="Enter Password" autocomplete="off">
+                
+                <button id="log-in">Log In</button>
+            </header>
+        </form>
+        <div class=py>
+            <div class=mana_name>
+                <p id="msg"></p>
+            </div>
+        </div>
+    </div>
+     
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>
