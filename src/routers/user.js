@@ -1,13 +1,13 @@
 const express = require('express');
 const User = require('../models/user');
-const Sys = require('../db/system/system')
+const Sys = require('../db/system/system');
 const {createUser} = require('../db/createUser');
-const router = new express.Router()
+const router = new express.Router();
 
 router.post('/user', async (req, res) => {
     // save user to DB
     if (req.body.username === '' || req.body.password === '') {
-        res.send({msg: 'You must provide Username and Password!'})
+        res.send({msg: 'You must provide Username and Password!'});
     } 
     // save user to DB
     createUser(req.body.username, req.body.password, req.body.tel);
@@ -41,16 +41,14 @@ router.post('/loginuser', async (req, res) => {
 
 router.patch('/logout', async (req, res) => {
     try {
-        // change to sys id 
-        const SYS_ID = '0'
-        changeLoginUser(SYS_ID, false)
-
+        // change to sys id
+        changeLoginUser('0', false);
     } catch (e) {
         res.status(400).send()
         console.log('Problem with logging out: ' + e)
     }
-    res.send({msg : 'You Logged out!'})
-})
+    res.send({msg : 'You Logged out!'});
+});
 
 async function changeLoginUser(user_id, isAdmin) {
     try {
@@ -58,12 +56,11 @@ async function changeLoginUser(user_id, isAdmin) {
         // change id of current user
         curr_user['currentId'] = user_id
         curr_user['isAdmin'] = isAdmin
-        await curr_user.save()
-
+        await curr_user.save();
     } catch (e) {
-        res.status(400).send()
-        console.log('Problem with getting data: ' + e)
+        res.status(400).send();
+        console.log('Problem with getting data: ' + e);
     }
-}
+};
 
 module.exports = router
