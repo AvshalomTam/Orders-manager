@@ -55,10 +55,39 @@ async function getUserOrdersById(id) {
     }
 }
 
+async function getMsgUsers() {
+    var msg = '';
+    var user_orders = [];
+    try {
+        const id_current = await getIdOfCurrUser();
+        // check if someone logged in 
+        if (id_current === '0') {
+            msg = 'You should logIn first!';
+        } else {
+            const orders = await getRightOrders(id_current);
+            // check if user have orders
+            if (orders.length === 0) { 
+                msg = 'There are no orders yet';
+            } else {
+            msg = 'Orders list:';
+            user_orders = orders;
+            }
+        }
+        return {
+            msg,
+            user_orders
+        };
+    } catch (e) {
+        console.log('Problem: ' + e);
+        res.status(400).send();
+    }
+};
+
 module.exports = {
     getRightOrders,
     isAdminById,
     getIdOfCurrUser,
     getUserNameById,
-    getUserOrdersById
+    getUserOrdersById,
+    getMsgUsers
 }

@@ -11,19 +11,16 @@
         {{>header}}
 
         <div class=e>
-        <form>
-            <header>
-                <br>
-                <button id="view-orders">View Orders</button>
-            </header>
-        </form>
         <div class=py>
-            {{>orders}}
+            <br>
+            {{msg}}<br>
+            {{#each user_orders}}
+                {{ownername}} ordered {{mana}} in {{date}}<br>
+            {{/each}}
         </div>
     </div>
      
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
-    <script src="/js/search.js"></script>
 </body>
 </html>

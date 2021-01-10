@@ -24,6 +24,9 @@ app.use(bodyParser.json());
 app.use(userRouter);
 app.use(orderRouter);
 
+// functions
+const { getMsgUsers } = require('../utils/fetchFromDB');
+
 // Routs
 app.get('/', function(req, res) {
     res.render('index');  
@@ -33,9 +36,13 @@ app.get('/makeOrder', (req, res) => {
     res.render('makeorder');
 })
 
-app.get('/search', (req, res) => {
-    res.render('search');
-}); 
+app.get('/search', async (req, res) => {
+    const {msg, user_orders} = await getMsgUsers();
+    res.render('search', {
+        msg,
+        user_orders
+    });
+});
 
 app.get('/newuser', (req, res) => {
     res.render('newuser');
